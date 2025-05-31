@@ -4,9 +4,9 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "../nprogress.css";
 import AboutSection from "./AboutSection";
-import Stats from "./Stats";
-import WhyLearn from "./Whylearn";
 import Feedback from "./Feedback";
+import Stats from "./Stats";
+import WhyLearn from "./WhyLearn";
 const slideImages = [
   "https://plus.unsplash.com/premium_photo-1722944969837-25bf2385056a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=2092&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -77,8 +77,6 @@ export default function Home() {
       <div className="my-12 w-11/12 mx-auto space-y-14">
         <AboutSection></AboutSection>
         <Stats></Stats>
-
-        
       </div>
 
       <WhyLearn></WhyLearn>
