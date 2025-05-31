@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@plugin "daisyui";
+* {
+  /* Primary Colors (Sakura Pink) */
+  --color-primary-50: #fef2f5;
+  --color-primary-100: #fee5eb;
+  --color-primary-200: #ffcbda;
+  --color-primary-300: #ffb7c5;
+  --color-primary-400: #ff8da8;
+  --color-primary-500: #ff6388;
+  --color-primary-600: #ff3a6b;
+  --color-primary-700: #ef0f4b;
+  --color-primary-800: #c80e41;
+  --color-primary-900: #a51139;
+
+  /* Secondary Colors (Indigo) */
+  --color-secondary-50: #eee7f3;
+  --color-secondary-100: #dbd0e7;
+  --color-secondary-200: #b7a0d0;
+  --color-secondary-300: #9271b9;
+  --color-secondary-400: #7145a4;
+  --color-secondary-500: #4b0082;
+  --color-secondary-600: #40006f;
+  --color-secondary-700: #36005c;
+  --color-secondary-800: #2b0049;
+  --color-secondary-900: #210036;
+
+  /* Accent Colors (Gold) */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fff4c6;
+  --color-accent-200: #ffea99;
+  --color-accent-300: #ffe066;
+  --color-accent-400: #ffd733;
+  --color-accent-500: #ffd700;
+  --color-accent-600: #e6c200;
+  --color-accent-700: #b39600;
+  --color-accent-800: #806b00;
+  --color-accent-900: #665500;
+
+  /* Font Families */
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-japanese: "Noto Sans JP", "sans-serif";
+}
+
+/* Optional: Define custom component classes */
+@layer components {
+  .btn-primary {
+    background-color: var(--color-primary-500);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-600);
+  }
+  .text-sakura {
+    color: var(--color-primary-300);
+  }
+  .text-indigo {
+    color: var(--color-secondary-500);
+  }
+  .text-gold {
+    color: var(--color-accent-500);
+  }
+  .font-sans-custom {
+    font-family: var(--font-sans);
+  }
+  .font-japanese-custom {
+    font-family: var(--font-japanese);
+  }
+}
+
+.animation-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+a.active {
+  color: var(--color-primary-500); /* Resolves to #ff6388 */
+  border-bottom: 2px solid var(--color-primary-500); /* 2px wide, solid, #ff6388 */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
