@@ -8,7 +8,7 @@ function logout() {}
 export default function Navbar() {
   const { createaccount, userdata, logout } = useContext(AuthContext);
 
-  console.log(userdata);
+  // console.log(userdata);
   return (
     <>
       <div className="">

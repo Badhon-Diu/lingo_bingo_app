@@ -163,7 +163,7 @@ export default function Startlearning() {
                 <p className="text-gray-700 italic">{singledata.example}</p>
               </div>
               <button className="btn btn-secondary my-4 ">
-                <Link to={`/start-learning/${singledata.lesson_id}`}>
+                <Link to={`/lesson/${singledata.lesson_id}`}>
                   View More
                 </Link>
               </button>
