@@ -6,7 +6,7 @@ import "../index.css";
 const userdata = "new";
 function logout() {}
 export default function Navbar() {
-  const { createaccount, userdata } = useContext(AuthContext);
+  const { createaccount, userdata, logout } = useContext(AuthContext);
 
   console.log(userdata);
   return (
@@ -86,7 +86,7 @@ export default function Navbar() {
                       <div className="w-10 rounded-full">
                         <img
                           alt="Tailwind CSS Navbar component"
-                          src="https://images.unsplash.com/photo-1630207831419-3532bcb828d7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          src={userdata.photoURL}
                         />
                       </div>
                     </div>
@@ -101,7 +101,7 @@ export default function Navbar() {
                       </li>
 
                       <li>
-                        <a>Logout</a>
+                        <a onClick={logout}>Logout</a>
                       </li>
                     </ul>
                   </div>

@@ -3,6 +3,7 @@ import App from "../App";
 import About from "../Components/About";
 import Home from "../Components/Home";
 import Myprofile from "../Components/Myprofile";
+import Tutorials from "../Components/Tutorials";
 import Startlearning from "../Pages/Startlearning";
 import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/tutorials",
-        element: <App></App>,
+        element: <Tutorials></Tutorials>,
       },
       {
         path: "/about",
