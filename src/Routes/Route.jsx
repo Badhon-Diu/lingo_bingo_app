@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "../App";
 import About from "../Components/About";
 import Home from "../Components/Home";
@@ -16,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "",
+        element: <Navigate to="/"></Navigate>,
       },
       {
         path: "/profile",
@@ -45,7 +49,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/lesson/:lessonId",
-        element: <LessonDetails></LessonDetails>,
+        element: (
+          <PrivateRoute>
+            <LessonDetails></LessonDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

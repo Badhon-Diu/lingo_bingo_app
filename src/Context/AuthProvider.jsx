@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase_init";
-
+import toast from "react-hot-toast";
 export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
@@ -18,7 +18,7 @@ export default function AuthProvider({ children }) {
   function createaccount() {
     signInWithPopup(auth, googleProvider)
       .then((res) => {
-        console.log(res.user);
+    
         setuserdata(res.user);
         // Show welcome toast with user's display name
         toast.success(`Welcome back, ${res.user.displayName}!`, {
@@ -35,7 +35,7 @@ export default function AuthProvider({ children }) {
         });
       })
       .catch((error) => {
-        console.log(error);
+      
         toast.error("Login failed. Please try again.");
       });
   }
@@ -45,7 +45,7 @@ export default function AuthProvider({ children }) {
   useEffect(() => {
     const unsubs = onAuthStateChanged(auth, (user) => {
       setuserdata(user);
-      console.log(user);
+     
       //setloading(false);
     });
 
@@ -58,7 +58,7 @@ export default function AuthProvider({ children }) {
 
   function logout() {
     signOut(auth)
-      .then((res) => console.log(res))
+     
       .catch((error) => console.log(error));
   }
 
