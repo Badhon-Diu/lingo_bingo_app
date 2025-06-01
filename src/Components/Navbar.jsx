@@ -1,9 +1,14 @@
 import { Cherry } from "lucide-react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Context/AuthProvider";
 import "../index.css";
 const userdata = "new";
 function logout() {}
 export default function Navbar() {
+  const { createaccount, userdata } = useContext(AuthContext);
+
+  console.log(userdata);
   return (
     <>
       <div className="">
@@ -20,7 +25,7 @@ export default function Navbar() {
               </span>
             </a>
 
-          <div className="dropdown md:hidden">
+            <div className="dropdown md:hidden">
               <div
                 tabIndex={0}
                 role="button"
@@ -69,46 +74,53 @@ export default function Navbar() {
               <NavLink to="/start-learning"> Start Learning</NavLink>
               <NavLink to="/tutorials"> Tutorials</NavLink>
               <NavLink to="/about"> About Us</NavLink>
-              <div className="flex-none">
-                <div className="dropdown dropdown-end">
-                  <div
-                    tabIndex={0}
-                    role="button"
-                    className="btn btn-ghost btn-circle avatar"
-                  >
-                    <div className="w-10 rounded-full">
-                      <img
-                        alt="Tailwind CSS Navbar component"
-                        src="https://images.unsplash.com/photo-1630207831419-3532bcb828d7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      />
-                    </div>
-                  </div>
-                  <ul
-                    tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-                  >
-                    <li>
-                      <Link to="/profile" className="justify-between">
-                        Profile
-                      </Link>
-                    </li>
 
-                    <li>
-                      <a >Logout</a>
-                    </li>
-                  </ul>
+              {userdata ? (
+                <div className="flex-none">
+                  <div className="dropdown dropdown-end">
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className="btn btn-ghost btn-circle avatar"
+                    >
+                      <div className="w-10 rounded-full">
+                        <img
+                          alt="Tailwind CSS Navbar component"
+                          src="https://images.unsplash.com/photo-1630207831419-3532bcb828d7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        />
+                      </div>
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                    >
+                      <li>
+                        <Link to="/profile" className="justify-between">
+                          Profile
+                        </Link>
+                      </li>
+
+                      <li>
+                        <a>Logout</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              {/* <div>
-                <button className="flex items-center gap-2 bg-white text-gray-800 border border-gray-300 px-3 py-[2px] rounded-full shadow hover:shadow-md hover:bg-gray-100 transition">
-                  <img
-                    src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-                    alt="Google logo"
-                    className="w-5 h-5"
-                  />
-                  Login with Google
-                </button>
-              </div> */}
+              ) : (
+                <div>
+                  <button
+                    onClick={createaccount}
+                    className="flex items-center gap-2 bg-white text-gray-800 border border-gray-300 px-3 py-[2px] rounded-full shadow hover:shadow-md hover:bg-gray-100 transition"
+                  >
+                    <img
+                      src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                      alt="Google logo"
+                      className="w-5 h-5"
+                    />
+                    Login with Google
+                  </button>
+                </div>
+              )}
             </nav>
           </div>
         </header>

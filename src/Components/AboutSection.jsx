@@ -18,7 +18,7 @@ const AboutSection = () => {
     <section className="section">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate__animated animate__backInLeft">
+          <div data-aos="fade-right">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-secondary-700">
               Making Japanese Learning{" "}
               <span className="text-[#e02450]">Fun & Effective</span>
@@ -41,7 +41,7 @@ const AboutSection = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 animate__animated animate__backInUp" >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8" data-aos="fade-left" data-aos-delay="200">
             <Feature
               icon={<BookOpen size={24} />}
               title="Structured Lessons"
